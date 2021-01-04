@@ -1,2 +1,2 @@
 # action-ktlint-setup
-Action to install ktlint
+GitHub Action to install ktlint
