@@ -19,7 +19,7 @@ if [ "${VERSION}" == "latest" ] ; then
 fi
 
 echo "::group::🧹 Installing ktlint ${VERSION} ... https://github.com/pinterest/ktlint"
-curl -ssL $RELEASE_URL | jq '.assets | .[] | select(.name == "ktlint") | .browser_download_url' | wget -qi -
+curl -ssL $RELEASE_URL | jq -r '.assets | .[] | select(.name == "ktlint") | .browser_download_url' | wget -qi -
 chmod a+x ktlint
 mv ktlint "${TEMP}/ktlint/bin"
 echo '::endgroup::'
